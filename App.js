@@ -1,37 +1,19 @@
-/**
- * Sample React Native App
- * https://github.com/facebook/react-native
- *
- * @format
- * @flow
- */
-
 import React, {Component} from 'react';
-import {
-  Platform, 
-  StyleSheet,
-  Text, 
-  View,
-  Image
-} from 'react-native';
+import { Platform, StyleSheet, Text, View, Image, pic}from 'react-native';
+import Judul from './Components/Judul';
 
-const instructions = Platform.select({
-  ios: 'Press Cmd+R to reload,\n' + 'Cmd+D or shake for dev menu',
-  android:
-    'Double tap R on your keyboard to reload,\n' +
-    'Shake or press menu button for dev menu',
-});
 
-type Props = {};
-export default class App extends Component<Props> {
+export default class App extends Component{
   render() {
     return (
       <View style={styles.container}>
-        <Text style={styles.welcome}>Nama: Tegar Faiqul Hammam Basuki</Text>
-        <Text style={styles.instructions}>No.absen : 21</Text>
-        <Text style={styles.instructions}>Kelas : XI RPL 2</Text>
-        <Image style={{width: 400, height: 400}} 
-        source={require('./content/gambar/karepe.jpg')} />
+      <Judul/>
+      <Image source={pic} style={{width:100, height: 100}}></Image>
+      <Text style={styles.welcome}>Nama : Tegar Faiqul Hammam Basuki</Text>
+      <Text style={styles.instruction}>Kelas : XI RPL 2</Text>
+      <Text style={styles.instruction}>Absen : 34</Text>
+      <Image style={{width: 400, height: 300}} 
+      source={require('./content/gambar/karepe.jpg')} />
       </View>
     );
   }
@@ -40,19 +22,22 @@ export default class App extends Component<Props> {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    justifyContent: 'center',
-    alignItems: 'center',
-    backgroundColor: 'red',
+    backgroundColor:"red",
+    alignItems: "center",
+    justifyContent : "center"
   },
   welcome: {
     fontSize: 20,
     textAlign: 'center',
+    fontWeight: 'bold',
     margin: 10,
-    color:'white',
+    color:'black',
   },
-  instructions: {
+  instruction: {
     textAlign: 'center',
-    color: 'white',
+    fontWeight: 'bold',
+    fontSize: 20,
+    color: 'black',
     marginBottom: 5,
-  },
+  }
 });
